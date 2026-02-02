@@ -19,12 +19,19 @@
         /* This is a 'Container' for your images to help with layouts */
         /* STYLE 1: The "Side-by-Side" Image */
 
-        .image-right {
-            float: right;        /* Pushes the image to the right side */
-            margin-left: 20px;   /* Creates a gap so text doesn't touch the image */
-            margin-bottom: 20px; /* Space below the image */
-            width: 20%;          /* Takes up 40% of the screen width (Big) */
+        /* 1. The Wrapper (The Parent) */
+        .flex-container {
+            display: flex;          /* Turns on the Flexbox logic */
+            flex-direction: row;    /* Puts items in a horizontal line */
+            align-items: flex-start; /* Aligns them at the top */
+            gap: 30px;              /* Creates the space between the text and image */
+            margin-bottom: 40px;
+        }
+        /* 3. The Image (The second partner) */
+        .image-right-flex {
+            width: 500%;             /* Your chosen size */
             border-radius: 10px;
+        /* Note: We removed 'float' because it interferes with Flexbox */
         }
 
         /* STYLE 2: The "Small & Centered" Image */
@@ -41,6 +48,29 @@
             clear: both;
         }
 
+       .diagonal-split-text {
+        /* This makes the "box" only as wide as your text, keeping the split centered
+        esto es necesario porque el párrafo se estira a lo ancho de toda la página, no dentro de un marco definido */
+            display: inline-block;
+        /* 1. Create the diagonal background */
+        /* 135deg creates that 'hypotenuse' angle from top-left to bottom-right and one code is for the white characters, the other for the red ones*/
+            background: linear-gradient(135deg, #ffffff 50%, #ff0000 50%);
+
+            /* 2. The Magic: This clips the background to the text only 
+            This is a special command that tells the color: "Don't fill the whole rectangular box; only fill the pixels where a letter exists."*/
+            -webkit-background-clip: text;
+            background-clip: text;
+
+            /* 3. Make the actual text transparent so the background shows through */
+            color: transparent;
+
+            /* 4. Visual tweaks */
+            /* Paragraph styling */
+            font-size: 1.5rem;
+            line-height: 1.4;
+            margin: 20px 0;
+            font-weight: 700; /* Thicker text helps the effect stand out */
+        }
     </style>
 </head>
 <body>
@@ -53,22 +83,18 @@
 
     <h2>My Gallery</h2>
 
-    
-    <img src="./assets/blame-architecture-2.jpg" alt="Large side image" class="image-right">
-    
-    <p>
+<div class="flex-container"> 
+    <p class="diagonal-split-text">
         Texto que iría al lado de la imagen de la derecha.
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque a augue eget ex efficitur maximus sed sed justo. 
         Suspendisse lorem leo, rutrum tincidunt maximus sed, auctor eu turpis. Ut quis faucibus eros.
-         Donec eu congue libero, a faucibus libero. Vestibulum id feugiat lectus. Pellentesque sapien lacus, vehicula quis lectus vel, gravida ullamcorper ex. Vestibulum ut accumsan ante. Pellentesque malesuada, nibh id cursus tempor, tortor turpis tincidunt purus, non aliquet enim sapien sit amet lorem. Suspendisse metus nisi, lacinia ac ligula et, ultricies egestas ex. Quisque condimentum risus ac mi venenatis lacinia. Donec laoreet libero id eros feugiat sagittis. Proin egestas quam at orci pharetra, vitae vulputate ligula placerat. Integer blandit nibh nec pellentesque commodo. Sed mattis metus id dui congue, sed commodo lacus sodales. Curabitur vitae feugiat metus. Phasellus blandit mi a sapien fermentum placerat. Sed sodales mi eget erat suscipit, non vestibulum lacus aliquam.
-
-Cras commodo odio vitae nibh dictum mollis. Nam venenatis nunc ut tempus rhoncus. Aliquam dictum tristique auctor. Vivamus finibus molestie malesuada. Aenean nec est dolor. Sed ornare tortor sapien, eget eleifend magna mollis id. Integer eu sapien et eros lacinia tincidunt et at leo. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ut ante nec lorem accumsan efficitur quis vitae tortor. Nulla vel felis convallis, ultricies sapien sit amet, suscipit orci. Phasellus dignissim volutpat pulvinar. Nulla sed quam ex.
-
-Ut at lectus augue. Nam tincidunt fringilla augue, varius ullamcorper sem suscipit ac. Morbi vel augue at turpis bibendum tempor. Nunc eu ultricies lorem. Phasellus nec lacus urna. Nam nunc magna, cursus ut efficitur in, varius in lectus. In commodo sem id neque sodales molestie. Aenean non scelerisque orci.
-
-Integer in libero quis nisl tincidunt mattis vitae vel lacus. Donec ac blandit sem. Praesent in facilisis sem. Integer eu porta magna, id rhoncus nulla. Nam nec justo odio. Aliquam erat volutpat. Proin id venenatis metus. Curabitur ac nisl ut nunc feugiat varius laoreet ac arcu. Nunc maximus dolor consectetur erat convallis viverra. Nullam eget purus vitae nulla gravida molestie. Nam ullamcorper suscipit felis eget vehicula. 
+        Donec eu congue libero, a faucibus libero. Vestibulum id feugiat lectus. Pellentesque sapien lacus, vehicula quis lectus vel, gravida ullamcorper ex. Vestibulum ut accumsan ante. Pellentesque malesuada, nibh id cursus tempor, tortor turpis tincidunt purus, non aliquet enim sapien sit amet lorem. Suspendisse metus nisi, lacinia ac ligula et, ultricies egestas ex. Quisque condimentum risus ac mi venenatis lacinia. Donec laoreet libero id eros feugiat sagittis. Proin egestas quam at orci pharetra, vitae vulputate ligula placerat. Integer blandit nibh nec pellentesque commodo. Sed mattis metus id dui congue, sed commodo lacus sodales. Curabitur vitae feugiat metus. Phasellus blandit mi a sapien fermentum placerat. Sed sodales mi eget erat suscipit, non vestibulum lacus aliquam.
+        Cras commodo odio vitae nibh dictum mollis. Nam venenatis nunc ut tempus rhoncus. Aliquam dictum tristique auctor. Vivamus finibus molestie malesuada. Aenean nec est dolor. Sed ornare tortor sapien, eget eleifend magna mollis id. Integer eu sapien et eros lacinia tincidunt et at leo. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ut ante nec lorem accumsan efficitur quis vitae tortor. Nulla vel felis convallis, ultricies sapien sit amet, suscipit orci. Phasellus dignissim volutpat pulvinar. Nulla sed quam ex.
+        Ut at lectus augue. Nam tincidunt fringilla augue, varius ullamcorper sem suscipit ac. Morbi vel augue at turpis bibendum tempor. Nunc eu ultricies lorem. Phasellus nec lacus urna. Nam nunc magna, cursus ut efficitur in, varius in lectus. In commodo sem id neque sodales molestie. Aenean non scelerisque orci.
+        Integer in libero quis nisl tincidunt mattis vitae vel lacus. Donec ac blandit sem. Praesent in facilisis sem. Integer eu porta magna, id rhoncus nulla. Nam nec justo odio. Aliquam erat volutpat. Proin id venenatis metus. Curabitur ac nisl ut nunc feugiat varius laoreet ac arcu. Nunc maximus dolor consectetur erat convallis viverra. Nullam eget purus vitae nulla gravida molestie. Nam ullamcorper suscipit felis eget vehicula. 
     </p>
-
+    <img src="./assets/blame-architecture-2.jpg" alt="Large side image" class="image-right-flex">
+</div>
     <div class="clear"></div>
 
     <hr> <p>
