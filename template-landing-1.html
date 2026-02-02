@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biefre 0</title>
+    
+    <style>
+        /* This section controls how things LOOK (CSS) */
+        
+        body {
+            background-color: black;    /* Sets the whole page to black */
+            color: white;               /* Sets all text to white */
+            font-family: 'playfair';    /* Uses a clean, modern font */
+            margin: 40px;               /* Adds space around the edges of the page */
+            line-height: 1.6;           /* Adds space between lines of text for readability */
+        }
+
+        /* This is a 'Container' for your images to help with layouts */
+        /* STYLE 1: The "Side-by-Side" Image */
+
+        .image-right {
+            float: right;        /* Pushes the image to the right side */
+            margin-left: 20px;   /* Creates a gap so text doesn't touch the image */
+            margin-bottom: 20px; /* Space below the image */
+            width: 20%;          /* Takes up 40% of the screen width (Big) */
+            border-radius: 10px;
+        }
+
+        /* STYLE 2: The "Small & Centered" Image */
+        .image-below {
+            display: block;      /* Makes it act like a block (takes up its own line) */
+            margin: 30px auto;   /* 'auto' centers it horizontally; 30px adds vertical space */
+            width: 300px;        /* Fixed small size */
+            border: 2px solid white;
+        }
+
+        /* This 'clears' the float so the next section of text doesn't get 
+           stuck trying to wrap around the image above it. */
+        .clear {
+            clear: both;
+        }
+
+    </style>
+</head>
+<body>
+
+    <h1>Biefre:0</h1>
+    
+    <p>In this world, is the destiny of mankind controlled by some transcendental entity or law?
+        Is it like the hand of God hovering above?
+        At least it is true that man has no control; even over his own will.</p>
+
+    <h2>My Gallery</h2>
+
+    
+    <img src="./assets/blame-architecture-2.jpg" alt="Large side image" class="image-right">
+    
+    <p>
+        Texto que iría al lado de la imagen de la derecha.
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque a augue eget ex efficitur maximus sed sed justo. 
+        Suspendisse lorem leo, rutrum tincidunt maximus sed, auctor eu turpis. Ut quis faucibus eros.
+         Donec eu congue libero, a faucibus libero. Vestibulum id feugiat lectus. Pellentesque sapien lacus, vehicula quis lectus vel, gravida ullamcorper ex. Vestibulum ut accumsan ante. Pellentesque malesuada, nibh id cursus tempor, tortor turpis tincidunt purus, non aliquet enim sapien sit amet lorem. Suspendisse metus nisi, lacinia ac ligula et, ultricies egestas ex. Quisque condimentum risus ac mi venenatis lacinia. Donec laoreet libero id eros feugiat sagittis. Proin egestas quam at orci pharetra, vitae vulputate ligula placerat. Integer blandit nibh nec pellentesque commodo. Sed mattis metus id dui congue, sed commodo lacus sodales. Curabitur vitae feugiat metus. Phasellus blandit mi a sapien fermentum placerat. Sed sodales mi eget erat suscipit, non vestibulum lacus aliquam.
+
+Cras commodo odio vitae nibh dictum mollis. Nam venenatis nunc ut tempus rhoncus. Aliquam dictum tristique auctor. Vivamus finibus molestie malesuada. Aenean nec est dolor. Sed ornare tortor sapien, eget eleifend magna mollis id. Integer eu sapien et eros lacinia tincidunt et at leo. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ut ante nec lorem accumsan efficitur quis vitae tortor. Nulla vel felis convallis, ultricies sapien sit amet, suscipit orci. Phasellus dignissim volutpat pulvinar. Nulla sed quam ex.
+
+Ut at lectus augue. Nam tincidunt fringilla augue, varius ullamcorper sem suscipit ac. Morbi vel augue at turpis bibendum tempor. Nunc eu ultricies lorem. Phasellus nec lacus urna. Nam nunc magna, cursus ut efficitur in, varius in lectus. In commodo sem id neque sodales molestie. Aenean non scelerisque orci.
+
+Integer in libero quis nisl tincidunt mattis vitae vel lacus. Donec ac blandit sem. Praesent in facilisis sem. Integer eu porta magna, id rhoncus nulla. Nam nec justo odio. Aliquam erat volutpat. Proin id venenatis metus. Curabitur ac nisl ut nunc feugiat varius laoreet ac arcu. Nunc maximus dolor consectetur erat convallis viverra. Nullam eget purus vitae nulla gravida molestie. Nam ullamcorper suscipit felis eget vehicula. 
+    </p>
+
+    <div class="clear"></div>
+
+    <hr> <p>
+        Texto que iría sobre la imagen de abajo.
+        Nulla dignissim ex sed dolor cursus tristique. 
+        Ut et magna vitae mi porttitor pulvinar. Morbi auctor auctor sapien, sed mattis purus posuere non. 
+        Nam in risus est. Pellentesque efficitur id lectus sed tincidunt. Proin imperdiet metus a leo sodales mollis. 
+    </p>
+
+    <img src="./assets/blame-architecture-1.jpg" alt="Small centered image" class="image-below">
+
+    <p style="text-align: center;"><em>Panel random de BLAME 1.</em></p>
+
+
+
+
+
+
+</body>
+</html>
